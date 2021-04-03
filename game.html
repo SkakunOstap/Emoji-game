@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: monospace;
+		}
+
+		table {
+			width: 600px;
+			height: 600px;
+			border-collapse: collapse;
+			margin: 20px auto;
+			font-size: 40px;
+		}
+
+		.field {
+			border: 1px solid;
+			vertical-align: middle;
+			text-align: center;
+			backface-visibility: hidden;
+			transform: rotate3d(0, 1, 0, 180deg);
+			transition: transform .5s ease-out 0s;
+		}
+
+		.field.show {
+			transform: rotate3d(0, 1, 0, 0deg);
+		}
+
+		.ashki {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		a {
+			display: block;
+			width: 100px;
+			height: 50px;
+			font-size: 20px;
+			margin: 20px auto;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		p {
+			text-align: center;
+			font-size: 20px;
+		}
+
+		p.score {
+			position: fixed;
+			top: 0;
+			right: 0;
+			font-size: 50px;
+		}
+	</style>
+	<script src="game.js"></script>
+</head>
+<body>
+<p class="score"></p>
+<table>
+	<tbody id='main_table'></tbody>
+</table>
+<p id="flash"></p>
+<div class="ashki">
+	<a onclick="restart(4)">EASY</a>
+	<a onclick="restart(6)">NORMAL</a>
+	<a onclick="restart(8)">HARD</a>
+	<a onclick="restart(10)">SHITASS</a>
+</div>
+</body>
+</html>
